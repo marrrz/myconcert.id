@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Tiket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="https://templates.iqonic.design/qwilo/html/qwilo/images/favicon.ico">
+      <!-- bootstrap -->
+      <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+      <!-- font awesome -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" type="text/css">
+      <!-- ionicons icon -->
+      <link href="assets/css/ioniczons.min.css" rel="stylesheet" type="text/css">
+      <!-- mega menu -->
+      <link href="assets/css/mega_menu.css" rel="stylesheet" type="text/css">
+      <!-- owl-carousel -->
+      <link href="assets/css/owl.carousel.css" rel="stylesheet" type="text/css">
+      <!-- magnific popup -->
+      <link href="assets/css/magnific-popup.css" rel="stylesheet" type="text/css">
+      <!-- animate -->
+      <link href="assets/css/animate.css" rel="stylesheet" type="text/css">
+      <!-- media element player -->
+      <link href="assets/css/mediaelementplayer.min.css" rel="stylesheet" type="text/css">
+      <!-- REVOLUTION STYLE SHEETS -->
+      <link href="assets/css/settings.css" rel="stylesheet" type="text/css">
+      <!-- ADD-ONS CSS FILES -->
+      <link href="assets/css/revolution.addon.particles.css" rel="stylesheet" type="text/css">
+      <!-- shortcodes -->
+      <link href="assets/css/shortcodes.css" rel="stylesheet" type="text/css">
+      <!-- main style -->
+      <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+      <!-- shop -->
+      <link href="assets/css/shop.css" rel="stylesheet" type="text/css">
+      <!-- responsive -->
+      <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+      <!-- custom -->
+      <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+      <!-- Style customizer (Remove these two lines please) -->
+      <link rel="stylesheet" href="index.html" data-style="styles">
+      <link rel="stylesheet" href="assets/css/style-customizer.css">
+       <link rel="stylesheet" href="assets/css/color-6.css" data-style="styles">
+    <style>
+        /* Full-page Background Image */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('assets/images/konserladygaga.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .header-05 {
+            width: 100%;
+        }
+
+        /* Transparent Navbar without Background */
+        .menu-logo img {
+            height: 50px;
+        }
+
+        .menu-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            position: relative;
+        }
+
+        .menu-links li {
+            position: relative;
+        }
+
+        .menu-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .menu-links li a:hover {
+            color: #ddd;
+        }
+
+        /* Styling dasar untuk form */
+        .ticket-form {
+            background: #181d51d1;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 2rem;
+        }
+
+        .ticket-form h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .ticket-form label {
+            font-size: 1rem;
+            color: #ffffff;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .ticket-form input, .ticket-form select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .ticket-form button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #ffffff;
+
+            color: #000000;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .ticket-form button:hover {
+            background-color: #181d51;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 80%;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px); /* Blur effect in modal */
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .modal-content img, .modal-content video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+
+        /* Dropdown Menu Styling */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%; /* Align below the menu item */
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            min-width: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-menu a:hover {
+            color: #ddd;
+        }
+
+        /* Show dropdown on hover */
+        .menu-links li:hover .dropdown-menu {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+  <!-- HEADER  -->
+  <header class="header-05 transparent">
+    <nav id="menu-1" class="mega-menu menuFullWidth desktopTopFixed">
+      <section class="menu-list-items">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <ul class="menu-logo">
+                <li>
+                  <a href="index.html">
+                    <img src="assets/images/logojmarr.png" alt="logo">
+                  </a>
+                </li>
+              </ul>
+              <ul class="menu-links">
+                <li><a href="index.html" class="iq-font-white">Home</a></li>
+                <li><a href="aboutus.html" class="iq-font-white">About Us</a></li>
+                <li><a href="radiostreaming.html" class="iq-font-white">Radio Streaming</a></li>
+
+                <!-- Galeri Dropdown Menu -->
+                <li>
+                  <a href="" class="iq-font-white">Galeri</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="foto.html">Foto</a></li>
+                    <li><a href="video.html">Video</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </nav>
+  </header>
+  <!-- /HEADER END -->
+
+  <div class="ticket-form">
+    <h2>Pemesanan Tiket Konser</h2>
+    <form onsubmit="return pesanTiket(event)" method="POST">
+        <!-- Nama Lengkap -->
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required placeholder="Masukkan nama Anda">
+
+        <!-- Email -->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="Masukkan email Anda">
+
+        <!-- Nomor Telepon -->
+        <label for="telepon">Nomor Telepon</label>
+        <input type="tel" id="telepon" name="telepon" required placeholder="Masukkan nomor telepon Anda">
+
+        <!-- Jenis Tiket -->
+        <label for="jenis-tiket">Jenis Tiket</label>
+        <select id="jenis-tiket" name="jenis_tiket" required>
+            <option value="" disabled selected>Pilih jenis tiket</option>
+            <option value="VIP">VIP - Rp 7,000,000</option>
+            <option value="Regular">Regular - Rp 4,000,000</option>
+        </select>
+
+        <!-- Jumlah Tiket -->
+        <label for="jumlah">Jumlah Tiket</label>
+        <input type="number" id="jumlah" name="jumlah" min="1" max="10" required placeholder="Masukkan jumlah tiket">
+
+        <!-- Tombol Submit -->
+        <button type="submit">Pesan Tiket</button>
+    </form>
+</div>
+
+<script>
+function pesanTiket(event) {
+    event.preventDefault(); // Mencegah submit form agar tidak reload halaman
+
+    alert("Terima kasih telah memesan tiket, kami akan menghubungi Anda dalam waktu 24 Jam.");
+
+    // Mengosongkan form setelah pemesanan
+    document.getElementById("nama").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("telepon").value = "";
+    document.getElementById("jenis-tiket").selectedIndex = 0;
+    document.getElementById("jumlah").value = "";
+    
+    return false; // Menghentikan submit form
+}
+</script>
+
+
+</body>
+</html>

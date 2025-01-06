@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="https://templates.iqonic.design/qwilo/html/qwilo/images/favicon.ico">
+      <!-- bootstrap -->
+      <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+      <!-- font awesome -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" type="text/css">
+      <!-- ionicons icon -->
+      <link href="assets/css/ioniczons.min.css" rel="stylesheet" type="text/css">
+      <!-- mega menu -->
+      <link href="assets/css/mega_menu.css" rel="stylesheet" type="text/css">
+      <!-- owl-carousel -->
+      <link href="assets/css/owl.carousel.css" rel="stylesheet" type="text/css">
+      <!-- magnific popup -->
+      <link href="assets/css/magnific-popup.css" rel="stylesheet" type="text/css">
+      <!-- animate -->
+      <link href="assets/css/animate.css" rel="stylesheet" type="text/css">
+      <!-- media element player -->
+      <link href="assets/css/mediaelementplayer.min.css" rel="stylesheet" type="text/css">
+      <!-- REVOLUTION STYLE SHEETS -->
+      <link href="assets/css/settings.css" rel="stylesheet" type="text/css">
+      <!-- ADD-ONS CSS FILES -->
+      <link href="assets/css/revolution.addon.particles.css" rel="stylesheet" type="text/css">
+      <!-- shortcodes -->
+      <link href="assets/css/shortcodes.css" rel="stylesheet" type="text/css">
+      <!-- main style -->
+      <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+      <!-- shop -->
+      <link href="assets/css/shop.css" rel="stylesheet" type="text/css">
+      <!-- responsive -->
+      <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+      <!-- custom -->
+      <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+      <!-- Style customizer (Remove these two lines please) -->
+      <link rel="stylesheet" href="index.html" data-style="styles">
+      <link rel="stylesheet" href="assets/css/style-customizer.css">
+       <link rel="stylesheet" href="assets/css/color-6.css" data-style="styles">
+       <style>
+       body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('assets/images/konserladygaga.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .header-05 {
+            width: 100%;
+        }
+
+        /* Transparent Navbar without Background */
+        .menu-logo img {
+            height: 50px;
+        }
+
+        .menu-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            position: relative;
+        }
+
+        .menu-links li {
+            position: relative;
+        }
+
+        .menu-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .menu-links li a:hover {
+            color: #ddd;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #ffffff;
+            margin: 6rem 0 2rem; /* Adjusted for more top margin */
+        }
+
+        /* Gallery Grid */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 1.5rem;
+            background-color: rgba(28, 28, 28, 0.568); /* Light overlay */
+            border-radius: 8px;
+
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img, .gallery-item:hover video {
+            transform: scale(1.05);
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 80%;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px); /* Blur effect in modal */
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .modal-content img, .modal-content video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+
+        /* Dropdown Menu Styling */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%; /* Align below the menu item */
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            min-width: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-menu a:hover {
+            color: #ddd;
+        }
+
+        /* Show dropdown on hover */
+        .menu-links li:hover .dropdown-menu {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header-05 transparent">
+        <nav id="menu-1" class="mega-menu menuFullWidth desktopTopFixed">
+          <section class="menu-list-items">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-12">
+                  <ul class="menu-logo">
+                    <li>
+                      <a href="index.html">
+                        <img src="assets/images/logojmarr.png" alt="logo">
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="menu-links">
+                    <li><a href="index.html" class="iq-font-white">Home</a></li>
+                    <li><a href="aboutus.html" class="iq-font-white">About Us</a></li>
+                    <li><a href="tiket.html" class="iq-font-white">Pesan Tiket</a></li>
+                    <li><a href="radiostreaming.html" class="iq-font-white">Radio Streaming</a></li>
+    
+                    <!-- Galeri Dropdown Menu -->
+                    <li>
+                      <a href="" class="iq-font-white">Galeri</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="foto.html">Foto</a></li>
+                        <li><a href="video.html">Video</a></li>
+                      </ul>
+                    </li>
+    
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </nav>
+      </header>
+  
+  <h2 style="margin-top: 75px;">
+    <span class="blur-background">Foto</span>
+  </h2>
+  
+  <style>
+      /* Efek blur di belakang teks Gallery */
+      .blur-background {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background-color: rgba(28, 28, 28, 0.568); /* Warna semi transparan */
+          border-radius: 8px;
+          color: #ffffff; /* Warna teks */
+      }
+  </style>
+  
+
+  <div class="gallery-container">
+    <div class="gallery-item" onclick="openModal('assets/images/konserladygaga.jpg')">
+        <img src="assets/images/konserladygaga.jpg" alt="Gallery Image 1">
+    </div>
+    <div class="gallery-item" onclick="openModal('assets/images/konserbruno.jpeg')">
+        <img src="assets/images/konserbruno.jpeg" alt="Gallery Image 2">
+    </div>
+    <div class="gallery-item" onclick="openModal('assets/images/konsertheweeknd.jpg')">
+        <img src="assets/images/konsertheweeknd.jpg" alt="Gallery Image 3">
+    </div>
+    <div class="gallery-item" onclick="openModal('assets/images/konserlanadelrey.png')">
+        <img src="assets/images/konserlanadelrey.png" alt="Gallery Image 4">
+    </div>
+    <div class="gallery-item" onclick="openModal('assets/images/konserladygaga.jpg')">
+        <img src="assets/images/konserladygaga.jpg" alt="Gallery Image 1">
+    </div>
+    <div class="gallery-item" onclick="openModal('assets/images/konserbruno.jpeg')">
+        <img src="assets/images/konserbruno.jpeg" alt="Gallery Image 2">
+    </div>
+    <div class="gallery-item" onclick="openModal('assets/images/konsertheweeknd.jpg')">
+        <img src="assets/images/konsertheweeknd.jpg" alt="Gallery Image 3">
+    </div>
+    <div class="gallery-item" onclick="openModal('assets/images/konserlanadelrey.png')">
+        <img src="assets/images/konserlanadelrey.png" alt="Gallery Image 4">
+    </div>
+    <div class="gallery-item" onclick="openModal('assets/images/konsertheweeknd.jpg')">
+        <img src="assets/images/konsertheweeknd.jpg" alt="Gallery Image 3">
+    </div>
+    <div class="gallery-item" onclick="openModal('assets/images/konserlanadelrey.png')">
+        <img src="assets/images/konserlanadelrey.png" alt="Gallery Image 4">
+    </div>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content" id="modal-content">
+        <button class="close" onclick="closeModal()">&times;</button>
+        <img id="modal-image" src="" alt="Modal Image">
+    </div>
+</div>
+
+<script>
+    function openModal(imageSrc) {
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        modal.style.display = 'flex';
+        modalImage.src = imageSrc;
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('modal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+</script>
+</body>
+</html>
